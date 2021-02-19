@@ -24,15 +24,15 @@ export class RecipeService {
 
   searchRecipes = (
     searchTerm: string,
-    cookTime: string,
-    cuisine: string
+    // cookTime: string,
+    // dietType: string,
   ): any => {
     return this.http.get(this.edamamSearchUrl, {
       params: {
         appKey: this.appKey,
         q: searchTerm,
-        time: cookTime,
-        cuisineType: cuisine,
+        // time: cookTime,
+        // diet: dietType,
       },
     });
   };
