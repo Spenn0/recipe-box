@@ -4,23 +4,30 @@ import { RecipeService } from '../recipe.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  recipeData: any;
 
-  recipeCards: any
+  constructor(private recipeCardService: RecipeService) {}
 
-  constructor(private recipeCardService: RecipeService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.recipeCardService.getRecipes()
-  }
+  // getRecipes = (searchTerm: string): void => {
+  //   this.recipeCardService
+  //     .searchRecipes(searchTerm)
+  //     .subscribe((response: any) => {
+  //       console.log(response);
+  //       this.recipeCards = response;
+  //     });
+  // };
 
-  getRecipes = (searchTerm: string):void => {
-    this.recipeCardService.searchRecipes(searchTerm).subscribe((response: any)=>{
-      console.log(response);
-      this.recipeCards = response
-    })
-  }
-
+  onSubmit = (searchTerm: string): void => {
+    this.recipeCardService
+      .searchRecipes(searchTerm)
+      .subscribe((response: any) => {
+        this.recipeData = response;
+        console.log(response);
+      });
+  };
 }

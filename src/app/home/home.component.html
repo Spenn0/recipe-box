@@ -1,4 +1,7 @@
 <app-header></app-header>
-<app-search1></app-search1>
-<app-recipe-card *ngFor="let recipe of recipeCards?.data"></app-recipe-card>
+<app-search1 (searchEvent)="onSubmit($event)"></app-search1>
+<app-recipe-card
+  *ngFor="let recipe of recipeData?.data"
+  [recipeRef]="recipe"
+></app-recipe-card>
 <app-footer></app-footer>
