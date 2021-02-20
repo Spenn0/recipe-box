@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-search1 (searchEvent)="onSubmit($event)"></app-search1>
 <app-recipe-card
-  *ngFor="let recipe of recipeData?.data"
+  *ngFor="let recipe of recipeData?.hits"
   [recipeRef]="recipe"
 ></app-recipe-card>
 <app-footer></app-footer>

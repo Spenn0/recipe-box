@@ -17,6 +17,6 @@ export class Search1Component implements OnInit {
 
   emitSearchTerm = (form: NgForm) => {
     console.log(form);
-    this.searchEvent.emit(form.form.value.searchTerm)
+    this.searchEvent.emit(form.form.value.search)
   }
 }
