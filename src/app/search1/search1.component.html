@@ -1,5 +1,21 @@
 <form #searchForm="ngForm" (ngSubmit)="emitSearchTerm(searchForm)">
-  <label for="search">Find Recipes</label>
-  <input type="text" name="search" id="search" ngModel />
+  <label for="searchQuery">Find Recipes</label>
+  <input type="text" name="searchQuery" id="searchQuery" ngModel />
+  <label for="cookTime">Cook Time</label>
+  <select name="cookTime" id="cookTime" ngModel>
+    <option value=""></option>
+    <option value="30">0-30 mintues</option>
+    <option value="30-60">30-60 minutes</option>
+    <option value="60">60+ minutes</option>
+  </select>
+  <label for="dietType">Diet</label>
+  <select name="dietType" id="dietType" ngModel>
+    <option value="low-carb">Low-carb</option>
+    <option value="balanced">Balanced</option>
+    <option value="high-fiber">High-fiber</option>
+    <option value="high-protein">High-protein</option>
+    <option value="low-sodium">Low-sodium</option>
+    <option value="low-fat">Low-fat</option>
+  </select>
   <button>search</button>
 </form>
