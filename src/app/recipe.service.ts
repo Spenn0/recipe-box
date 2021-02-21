@@ -10,10 +10,6 @@ export class RecipeService {
   edamamSearchUrl: string = 'https://api.edamam.com/search';
   favorites: any[] = [];
 
-  // enum CuisineType{
-  //   indian:"indian",
-  // }
-
   constructor(private http: HttpClient) {}
 
   searchRecipes = (
