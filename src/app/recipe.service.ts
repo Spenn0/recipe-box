@@ -16,31 +16,21 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  // getRecipes = (): any => {
-  //   return this.http.get(this.edamamSearchUrl, {
-  //     params: {
-  //       app_id: this.appId,
-  //       app_key: this.appKey,
-
-  //     },
-  //   });
-  // };
-
   searchRecipes = (
-    searchTerm: string
-    // cookTime: string,
-    // dietType: string,
+    searchTerm: string,
+    cookTime: string,
+    dietType: string
   ): any => {
     return this.http.get(this.edamamSearchUrl, {
       params: {
         app_id: this.appId,
         app_key: this.appKey,
         q: searchTerm,
-        // time: cookTime,
-        // diet: dietType,
+        time: cookTime,
+        Diet: dietType,
       },
     });
   };
 }
-// FIGURE OUT WHY Q ISN"T SHOWING UP AS THE QUERY SEARCHED
+// FIGURE OUT WHY TYPES ARE UNDEFINED FOR TIME OR DIET
 // FIGURE OUT WHY RECIPE CARD ISN"T POPULATING RECIPES
