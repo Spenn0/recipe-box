@@ -40,3 +40,12 @@
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
+
+.buttons {
+  display: flex;
+}
+
+.favorite {
+ position: absolute;
+ right: 0;
+}

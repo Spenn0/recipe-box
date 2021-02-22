@@ -32,6 +32,16 @@ export class RecipeService {
       params: params,
     });
   };
+
+  addFavorite = (recipe: any):void => {
+    this.favorites.push(recipe)
+    console.log(this.favorites);
+    
+  }
+
+  getFavorites = ():any[] => {
+    return this.favorites;
+  }
 }
 // FIGURE OUT WHY TYPES ARE UNDEFINED FOR TIME OR DIET
 // FIGURE OUT WHY RECIPE CARD ISN"T POPULATING RECIPES

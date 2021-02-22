@@ -16,5 +16,8 @@
   </div>
   <p>Name:{{ recipeRef.recipe.label }}</p>
   <img src="{{ recipeRef.recipe.image }}" alt="" />
-  <button (click)="showDetails()">Details</button>
+  <div class="buttons">
+    <button (click)="showDetails()">Details</button>
+    <button class="favorite" (click)="emitFavoriteEvent(recipeRef)" [ngClass]="{favorite: checkFavorite(recipeRef)}">fav icon</button>
+  </div>
 </li>
