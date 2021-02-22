@@ -11,22 +11,25 @@ export class RecipeService {
   favorites: any[] = [];
 
   constructor(private http: HttpClient) {}
-
-  searchRecipes = (
-    searchTerm: string,
-    cookTime: string,
-    dietType: string
-  ): any => {
-    console.log(searchTerm, cookTime, dietType);
-    
+  //SEARCH RECIPES CAN TAKE IN AN OBJECT AND IF IT HAS CERTAIN PROPERTIES IT WILL USE THEM FOR PARAMS
+  searchRecipes = (searchObject: any): any => {
+    console.log(searchObject);
+    let params: any = {
+      app_id: this.appId,
+      app_key: this.appKey,
+    };
+    if (searchObject.q) {
+      params.q = searchObject.q;
+    }
+    if (searchObject.dietType) {
+      params.diet = searchObject.dietType;
+    }
+    if (searchObject.cookTime) {
+      params.time = searchObject.cookTime;
+    }
+    console.log(params);
     return this.http.get(this.edamamSearchUrl, {
-      params: {
-        app_id: this.appId,
-        app_key: this.appKey,
-        q: searchTerm,
-        time: cookTime,
-        diet: dietType,
-      },
+      params: params,
     });
   };
 }

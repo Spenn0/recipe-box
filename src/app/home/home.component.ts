@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -13,12 +14,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit = (recipeForm: any): void => {
-    let searchQuery = recipeForm.form.value.searchQuery;
-    let cookTime = recipeForm.form.value.cookTime;
-    let dietType = recipeForm.form.value.dietType;
+  onSubmit = (recipeForm: NgForm): void => {
+    // let searchQuery = recipeForm.form.value.searchQuery;
+    // let cookTime = recipeForm.form.value.cookTime;
+    // let dietType = recipeForm.form.value.dietType;
+    console.log(recipeForm.form.value);
+
     this.recipeCardService
-      .searchRecipes(searchQuery, cookTime, dietType)
+      .searchRecipes(recipeForm.form.value)
       .subscribe((response: any) => {
         this.recipeData = response;
         console.log(response);
