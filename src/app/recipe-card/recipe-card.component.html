@@ -1,8 +1,20 @@
 <li class="recipe-card">
-    <div class="ingredients"></div>
-    <p>Name:{{ recipeRef.recipe.label }}</p>
-    <img src="{{ recipeRef.recipe.image }}" alt="">
+  <div *ngIf="showPopup" class="popup">
+    <!-- in wanting to conditionally show an element use *ngIf="" -->
+    <ul>
+      <li *ngFor="let ingredient of recipeRef?.recipe.ingredients; index as i">
+        {{ ingredient.text }}
+      </li>
+    </ul>
+    <p>{{ recipeRef.recipe.yield }}</p>
+    <p>{{ recipeRef.recipe.totalTime }}</p>
+    <p>{{ recipeRef.recipe.calories }}</p>
+    <p>
+      Get this Recipe from:
+      <a href="{{ recipeRef.recipe.url }}">{{ recipeRef.recipe.source }}</a>
+    </p>
+  </div>
+  <p>Name:{{ recipeRef.recipe.label }}</p>
+  <img src="{{ recipeRef.recipe.image }}" alt="" />
+  <button (click)="showDetails()">Details</button>
 </li>
-
-
-

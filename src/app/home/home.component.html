@@ -2,8 +2,8 @@
 <app-search1 (searchEvent)="onSubmit($event)"></app-search1>
 <ul class="card-container">
   <app-recipe-card
-  *ngFor="let recipe of recipeData?.hits"
-  [recipeRef]="recipe"
-></app-recipe-card>
+    *ngFor="let recipe of recipeData?.hits; index as i"
+    [recipeRef]="recipe"
+  ></app-recipe-card>
 </ul>
 <app-footer></app-footer>
