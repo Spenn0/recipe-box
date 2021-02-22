@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-favorites',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesComponent implements OnInit {
 
-  constructor() { }
+  favorites:any[]=[];
+
+  constructor(private yumService: RecipeService) { }
 
   ngOnInit(): void {
+    this.getAndSetFavorites()
   }
-
+  getAndSetFavorites = ():void => {
+    this.favorites = this.yumService.getFavorites();
+  }
 }
