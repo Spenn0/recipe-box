@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./search1.component.css'],
 })
 export class Search1Component implements OnInit {
-  @Output() searchEvent = new EventEmitter<string>();
+  @Output() searchEvent = new EventEmitter<any>();
 
   constructor() {}
 
@@ -15,8 +15,6 @@ export class Search1Component implements OnInit {
 
   emitSearchTerm = (form: NgForm) => {
     console.log(form);
-    this.searchEvent.emit(form.form.value.searchQuery);
-    this.searchEvent.emit(form.form.value.cookTime);
-    this.searchEvent.emit(form.form.value.dietType);
+    this.searchEvent.emit(form);
   };
 }
