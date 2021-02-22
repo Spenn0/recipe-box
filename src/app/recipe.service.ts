@@ -17,13 +17,15 @@ export class RecipeService {
     cookTime: string,
     dietType: string
   ): any => {
+    console.log(searchTerm, cookTime, dietType);
+    
     return this.http.get(this.edamamSearchUrl, {
       params: {
         app_id: this.appId,
         app_key: this.appKey,
         q: searchTerm,
         time: cookTime,
-        Diet: dietType,
+        diet: dietType,
       },
     });
   };

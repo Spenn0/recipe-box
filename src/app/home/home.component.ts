@@ -13,9 +13,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit = (searchTerm: string, cookTime: string, dietType: string): void => {
+  onSubmit = (recipeForm: any): void => {
+    let searchQuery = recipeForm.form.value.searchQuery;
+    let cookTime = recipeForm.form.value.cookTime;
+    let dietType = recipeForm.form.value.dietType;
     this.recipeCardService
-      .searchRecipes(searchTerm, cookTime, dietType)
+      .searchRecipes(searchQuery, cookTime, dietType)
       .subscribe((response: any) => {
         this.recipeData = response;
         console.log(response);
