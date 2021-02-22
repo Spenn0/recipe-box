@@ -33,15 +33,31 @@ export class RecipeService {
     });
   };
 
-  addFavorite = (recipe: any):void => {
-    this.favorites.push(recipe)
+  addFavorite = (recipe: any): void => {
+    this.favorites.push(recipe);
     console.log(this.favorites);
-    
-  }
+  };
 
-  getFavorites = ():any[] => {
+  toggleFavorite = (recipe: any): void => {
+    let index = this.favorites.findIndex((item) => {
+      return item.recipe.label === recipe.recipe.label;
+    });
+    if (index === -1) {
+      this.favorites.push(recipe);
+    } else {
+      this.favorites.splice(index, 1);
+    }
+  };
+  // index = recipe.id;
+  // if (this.favorites.includes(recipe)) {
+  //   this.favorites.splice(index, recipe);
+  // } else {
+  //   this.favorites.push(recipe);
+  // }
+
+  getFavorites = (): any[] => {
     return this.favorites;
-  }
+  };
 }
 // FIGURE OUT WHY TYPES ARE UNDEFINED FOR TIME OR DIET
 // FIGURE OUT WHY RECIPE CARD ISN"T POPULATING RECIPES

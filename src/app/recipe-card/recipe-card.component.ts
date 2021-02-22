@@ -1,3 +1,4 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class RecipeCardComponent implements OnInit {
   @Input() recipeRef: any;
   @Input() favoritesRef!: any[];
-  @Output() favoriteEvent = new EventEmitter<any>()
+  @Output() favoriteEvent = new EventEmitter<any>();
   // @Input() recipeIngredients: any;
   ingredients: any;
   recipe: any;
@@ -22,15 +23,19 @@ export class RecipeCardComponent implements OnInit {
     this.showPopup = !this.showPopup;
   };
 
-  emitFavoriteEvent = (recipe:any):void => {
+  emitFavoriteEvent = (recipe: any): void => {
     this.favoriteEvent.emit(recipe);
-    
-  }
-
-  checkFavorite = (recipe: any): boolean => {
-    return this.favoritesRef.some((item: { id: any }) => {
-      return item.id === recipe.id;
-    });
   };
 
+  // checkFavorite = (recipe: any): boolean => {
+  //   return this.favoritesRef.some((item: any) => {
+  //     return item.id === recipe.id;
+  //   });
+  // };
+
+  // toggleFavorite = (recipe: any): boolean => {
+  //   return this.favoritesRef.some((item: any) => {
+  //     return item.id === recipe.id;
+  //   });
+  // };
 }

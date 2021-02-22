@@ -9,12 +9,12 @@ import { RecipeService } from '../recipe.service';
 })
 export class HomeComponent implements OnInit {
   recipeData: any;
-  favorites:any [] = [];
+  favorites: any[] = [];
 
   constructor(private recipeCardService: RecipeService) {}
 
   ngOnInit(): void {
-    this.getAndSetFavorites()
+    this.getAndSetFavorites();
   }
 
   onSubmit = (recipeForm: NgForm): void => {
@@ -31,11 +31,11 @@ export class HomeComponent implements OnInit {
       });
   };
 
-  addToFavorites = (recipe: any):void => {
-    this.recipeCardService.addFavorite(recipe);
-  }
+  toggleThatFavorite = (recipe: any): void => {
+    this.recipeCardService.toggleFavorite(recipe);
+  };
 
-  getAndSetFavorites = ():void => {
+  getAndSetFavorites = (): void => {
     this.favorites = this.recipeCardService.getFavorites();
-  }
+  };
 }
