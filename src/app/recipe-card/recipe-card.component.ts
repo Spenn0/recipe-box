@@ -7,8 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RecipeCardComponent implements OnInit {
   @Input() recipeRef: any;
+  // @Input() recipeIngredients: any;
+  ingredients: any;
+  recipe: any;
+  showPopup: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  showDetails = (): void => {
+    this.showPopup = !this.showPopup;
+  };
 }
