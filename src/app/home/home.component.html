@@ -4,7 +4,7 @@
   <app-recipe-card
     *ngFor="let recipe of recipeData?.hits; index as i"
     [recipeRef]="recipe"
-    (favoriteEvent)="addToFavorites($event)"
+    (favoriteEvent)="toggleThatFavorite($event)"
   ></app-recipe-card>
 </ul>
 <app-footer></app-footer>

@@ -4,18 +4,22 @@ import { RecipeService } from '../recipe.service';
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
-  styleUrls: ['./favorites.component.css']
+  styleUrls: ['./favorites.component.css'],
 })
 export class FavoritesComponent implements OnInit {
+  favorites: any[] = [];
 
-  favorites:any[]=[];
-
-  constructor(private yumService: RecipeService) { }
+  constructor(private yumService: RecipeService) {}
 
   ngOnInit(): void {
-    this.getAndSetFavorites()
+    this.getAndSetFavorites();
   }
-  getAndSetFavorites = ():void => {
+  getAndSetFavorites = (): void => {
     this.favorites = this.yumService.getFavorites();
-  }
+  };
+
+  toggleThatFavorite = (recipe: any): void => {
+    this.yumService.toggleFavorite(recipe);
+    this.getAndSetFavorites();
+  };
 }

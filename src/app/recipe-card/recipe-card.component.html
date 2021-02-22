@@ -18,6 +18,9 @@
   <img src="{{ recipeRef.recipe.image }}" alt="" />
   <div class="buttons">
     <button (click)="showDetails()">Details</button>
-    <button class="favorite" (click)="emitFavoriteEvent(recipeRef)" [ngClass]="{favorite: checkFavorite(recipeRef)}">fav icon</button>
+    <button class="favorite" (click)="emitFavoriteEvent(recipeRef)">
+      fav icon
+    </button>
   </div>
 </li>
+<!-- [ngClass]="{favorite: checkFavorite(recipeRef)}" -->
