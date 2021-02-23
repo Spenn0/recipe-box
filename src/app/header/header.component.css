@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+img {
+  /* top: 0;
+  left: 100px; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+
+  /* justify-content: center; */
+  /* height: 100vh; */
+}
+.nav-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  font-size: 2.25em;
+  padding: 20px;
+}

@@ -1,22 +1,28 @@
-<form #searchForm="ngForm" (ngSubmit)="emitSearchTerm(searchForm)">
-  <label for="q">Find Recipes</label>
-  <input type="text" name="q" id="q" required ngModel />
-  <label for="cookTime">Cook Time</label>
-  <select name="cookTime" id="cookTime" ngModel>
-    <option value=""></option>
-    <option value="1-30">0-30 minutes</option>
-    <option value="30-60">30-60 minutes</option>
-    <option value="60-10001">60+ minutes</option>
-  </select>
-  <label for="dietType">Diet</label>
-  <select name="dietType" id="dietType" ngModel>
-    <option value=""></option>
-    <option value="low-carb">Low-carb</option>
-    <option value="balanced">Balanced</option>
-    <!-- <option value="high-fiber">High-fiber</option> -->
-    <option value="high-protein">High-protein</option>
-    <!-- <option value="low-sodium">Low-sodium</option> -->
-    <option value="low-fat">Low-fat</option>
-  </select>
-  <button [disabled]="searchForm.invalid">search</button>
-</form>
+<section class="form-containah">
+  <form
+    class="search-form"
+    #searchForm="ngForm"
+    (ngSubmit)="emitSearchTerm(searchForm)"
+  >
+    <label for="q">Find Recipes</label>
+    <input class="inputs" type="text" name="q" id="q" required ngModel />
+    <label for="cookTime">Cook Time</label>
+    <select class="inputs" name="cookTime" id="cookTime" ngModel>
+      <option value=""></option>
+      <option value="1-30">0-30 minutes</option>
+      <option value="30-60">30-60 minutes</option>
+      <option value="60-10001">60+ minutes</option>
+    </select>
+    <label for="dietType">Diet</label>
+    <select class="inputs" name="dietType" id="dietType" ngModel>
+      <option value=""></option>
+      <option value="low-carb">Low-carb</option>
+      <option value="balanced">Balanced</option>
+      <!-- <option value="high-fiber">High-fiber</option> -->
+      <option value="high-protein">High-protein</option>
+      <!-- <option value="low-sodium">Low-sodium</option> -->
+      <option value="low-fat">Low-fat</option>
+    </select>
+    <button class="btn" [disabled]="searchForm.invalid">search</button>
+  </form>
+</section>
