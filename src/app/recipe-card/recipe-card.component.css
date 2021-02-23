@@ -3,10 +3,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: black solid 1px;
-  background-color: white;
+  /* border: black solid 1px; */
+  background-color: rgba(255, 255, 255, 0.705);
   position: relative;
   width: 85vw;
+  margin: 10px 0;
 }
 
 .hide-details {
@@ -32,29 +33,53 @@
 }
 
 .popup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   position: absolute;
+  flex-direction: column;
   top: 0;
   left: 0;
+  /* padding: 30px; */
   width: 100%;
   height: 100%;
   /* display: flex; */
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
-
+.info {
+  /* margin-top: 20px 0; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
 .buttons {
   display: flex;
+  justify-content: space-between;
 }
 
 .favorite {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
   background-color: #fece40;
-  position: absolute;
-  right: 22px;
+  /* position: absolute; */
+  right: 18px;
+  bottom: 28.5px;
+  border: none;
+  cursor: crosshair;
+}
+.favorite:hover {
+  transform: translateY(-3px);
+  font-size: 23px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.59);
 }
 
 .liked {
-  background-color: red;
+  background-color: #bd200b;
   position: absolute;
+  color: white;
 }
 
 .title {
@@ -62,9 +87,29 @@
 }
 
 .main-recipe {
-  width: 90%;
+  width: 250px;
   height: 450px;
   justify-content: space-evenly;
   display: flex;
   flex-direction: column;
+}
+
+.deets {
+  /* margin-left: 1px; */
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
+  padding: 5px;
+
+  /* background-color: #fece40; */
+  background-color: rgb(71, 69, 69);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: crosshair;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-recipe {
+  }
 }
