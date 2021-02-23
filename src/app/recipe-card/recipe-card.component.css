@@ -47,19 +47,24 @@
 }
 
 .favorite {
- position: absolute;
- right: 0;
+  background-color: #fece40;
+  position: absolute;
+  right: 22px;
+}
+
+.liked {
+  background-color: red;
+  position: absolute;
 }
 
 .title {
- word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .main-recipe {
-    width: 90%;
-    height: 450px;
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: column;
+  width: 90%;
+  height: 450px;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
 }
-

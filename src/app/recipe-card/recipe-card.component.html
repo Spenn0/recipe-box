@@ -21,7 +21,11 @@
     <img src="{{ recipeRef.recipe.image }}" alt="" />
     <div class="buttons">
       <button class="btn" (click)="showDetails()">Details</button>
-      <button class="btn favorite" (click)="emitFavoriteEvent(recipeRef)">
+      <button
+        class="btn favorite"
+        (click)="emitFavoriteEvent(recipeRef)"
+        [ngClass]="{ liked: checkFavorite(recipeRef) }"
+      >
         <i class="fas fa-utensils"></i>
       </button>
     </div>

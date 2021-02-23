@@ -27,11 +27,11 @@ export class RecipeCardComponent implements OnInit {
     this.favoriteEvent.emit(recipe);
   };
 
-  // checkFavorite = (recipe: any): boolean => {
-  //   return this.favoritesRef.some((item: any) => {
-  //     return item.id === recipe.id;
-  //   });
-  // };
+  checkFavorite = (recipe: any): boolean => {
+    return this.favoritesRef.some((item: any) => {
+      return item.recipe.uri === recipe.recipe.uri;
+    });
+  };
 
   // toggleFavorite = (recipe: any): boolean => {
   //   return this.favoritesRef.some((item: any) => {
