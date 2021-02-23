@@ -1,0 +1,23 @@
+.form-containah {
+  width: 100%;
+  margin: 10px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* align-items: center; */
+  font-size: 1.5em;
+  margin: 10px;
+  padding: 20px;
+}
+
+.inputs {
+  padding: 5px;
+  font-size: 1.000000009em;
+}
+
+.btn {
+  margin: 15px;
+}

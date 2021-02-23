@@ -17,8 +17,8 @@
   <p>Name:{{ recipeRef.recipe.label }}</p>
   <img src="{{ recipeRef.recipe.image }}" alt="" />
   <div class="buttons">
-    <button (click)="showDetails()">Details</button>
-    <button class="favorite" (click)="emitFavoriteEvent(recipeRef)">
+    <button class="btn" (click)="showDetails()">Details</button>
+    <button class="btn favorite" (click)="emitFavoriteEvent(recipeRef)">
       fav icon
     </button>
   </div>
