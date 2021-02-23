@@ -6,6 +6,7 @@
   border: black solid 1px;
   background-color: white;
   position: relative;
+  width: 100%;
 }
 
 .hide-details {
@@ -49,3 +50,16 @@
  position: absolute;
  right: 0;
 }
+
+.title {
+ word-wrap: break-word;
+}
+
+.main-recipe {
+    width: 90%;
+    height: 450px;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+}
+
