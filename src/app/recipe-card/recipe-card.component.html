@@ -13,14 +13,18 @@
       Get this Recipe from:
       <a href="{{ recipeRef.recipe.url }}">{{ recipeRef.recipe.source }}</a>
     </p>
+    <button (click)="showDetails()">back</button>
   </div>
-  <p>Name:{{ recipeRef.recipe.label }}</p>
-  <img src="{{ recipeRef.recipe.image }}" alt="" />
-  <div class="buttons">
-    <button class="btn" (click)="showDetails()">Details</button>
-    <button class="btn favorite" (click)="emitFavoriteEvent(recipeRef)">
-      fav icon
-    </button>
+  <!-- ^^^ popup -->
+  <div class="main-recipe">
+    <p class="title">{{ recipeRef.recipe.label }}</p>
+    <img src="{{ recipeRef.recipe.image }}" alt="" />
+    <div class="buttons">
+      <button class="btn" (click)="showDetails()">Details</button>
+      <button class="btn favorite" (click)="emitFavoriteEvent(recipeRef)">
+        <i class="fas fa-utensils"></i>
+      </button>
+    </div>
   </div>
 </li>
 <!-- [ngClass]="{favorite: checkFavorite(recipeRef)}" -->
