@@ -20,4 +20,10 @@
 
 .btn {
   margin: 15px;
+  font-size: 1.15em;
+  padding: 5px;
+  background-color: #fece40;
+  color: black;
+  border: none;
+  border-radius: 2px;
 }

@@ -1,7 +1,10 @@
 <app-header></app-header>
-<app-recipe-card
-  *ngFor="let favorite of favorites"
-  [recipeRef]="favorite"
-  (favoriteEvent)="toggleThatFavorite($event)"
-></app-recipe-card>
+<ul class="card-container">
+  <app-recipe-card
+    *ngFor="let favorite of favorites"
+    [recipeRef]="favorite"
+    [favoritesRef]="favorites"
+    (favoriteEvent)="toggleThatFavorite($event)"
+  ></app-recipe-card>
+</ul>
 <app-footer></app-footer>
