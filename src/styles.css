@@ -15,7 +15,7 @@ body,
   font-family: "Montserrat", sans-serif;
 }
 
-body {
+html {
   /* position: fixed; */
   /* top: 0; */
   /* right: 0; */
@@ -29,9 +29,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  /* z-index: -2; */
+  z-index: -2;
 }
-/* html:after {
+html::after {
   content: "";
   animation: grain 8s steps(10) infinite;
   background-image: url(src/assets/paper_1/paper_1_@2X.png);
@@ -75,7 +75,7 @@ body {
   90% {
     transform: translate(-10%, 10%);
   }
-} */
+}
 html {
   background-color: rgb(231, 99, 47);
 }
