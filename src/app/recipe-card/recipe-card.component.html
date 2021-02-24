@@ -1,26 +1,38 @@
 <li class="recipe-card">
   <div *ngIf="showPopup" class="popup">
     <!-- in wanting to conditionally show an element use *ngIf="" -->
-    <ul>
+    <ul class="ingredient-class">
+      <p>Ingredients:</p>
       <li *ngFor="let ingredient of recipeRef?.recipe.ingredients; index as i">
         {{ ingredient.text }}
       </li>
     </ul>
-    <p>{{ recipeRef.recipe.yield }}</p>
-    <p>{{ recipeRef.recipe.totalTime }}</p>
-    <p>{{ recipeRef.recipe.calories }}</p>
-    <p>
-      Get this Recipe from:
-      <a href="{{ recipeRef.recipe.url }}">{{ recipeRef.recipe.source }}</a>
-    </p>
-    <button (click)="showDetails()">back</button>
+    <div class="info">
+      <p>
+        <span class="pop-title"> Servings:</span> {{ recipeRef.recipe.yield }}
+      </p>
+      <p>
+        <span class="pop-title">Cook Time:</span>
+        {{ recipeRef.recipe.totalTime }}
+      </p>
+      <p>
+        <span class="pop-title">Calories:</span> {{ recipeRef.recipe.calories }}
+      </p>
+      <p>
+        Get this Recipe from:
+        <a class="gross" href="{{ recipeRef.recipe.url }}">{{
+          recipeRef.recipe.source
+        }}</a>
+      </p>
+    </div>
+    <button class="pop-button" (click)="showDetails()">Back</button>
   </div>
   <!-- ^^^ popup -->
   <div class="main-recipe">
     <p class="title">{{ recipeRef.recipe.label }}</p>
     <img src="{{ recipeRef.recipe.image }}" alt="" />
     <div class="buttons">
-      <button class="btn" (click)="showDetails()">Details</button>
+      <button class="btn deets" (click)="showDetails()">Details</button>
       <button
         class="btn favorite"
         (click)="emitFavoriteEvent(recipeRef)"
