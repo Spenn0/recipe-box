@@ -4,18 +4,18 @@
   align-items: center;
   flex-direction: column;
   /* border: black solid 1px; */
-  background-color: rgba(255, 255, 255, 0.705);
+  background-color: rgba(255, 255, 255, 0.853);
   position: relative;
   width: 85vw;
   margin: 10px 0;
-  /* border-radius: 15%;  */
+  border-radius: 2px;
   /* thought about rounding the container if the image is a circle? */
 }
 
 /* tried making the images a circle - curious what ya'll think? if trying, we need to add the class to the image in recipe-card html */
-/* .recipe-pic {
+.recipe-pic {
   border-radius: 50%;
-} */
+}
 
 .hide-details {
   display: none;
@@ -116,7 +116,7 @@
 
 .liked {
   background-color: #bd200b;
-  position: absolute;
+  /* position: absolute; */
   color: white;
 }
 
