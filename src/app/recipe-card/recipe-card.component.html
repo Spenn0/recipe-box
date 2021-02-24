@@ -15,14 +15,14 @@
         {{ recipeRef.recipe.totalTime }}
       </p>
       <p>
-        <span class="pop-title">Calories:</span> {{ recipeRef.recipe.calories }}
+        <span class="pop-title">Calories:</span>
+        {{ recipeRef.recipe.calories.toFixed(0) }}
       </p>
       <div class="hyper">
-        <p class="link-recipe-site">
-          Get this Recipe from:        </p>
-          <a class="gross" href="{{ recipeRef.recipe.url }}">{{
-            recipeRef.recipe.source
-          }}</a>
+        <p class="link-recipe-site">Get this Recipe from:</p>
+        <a class="gross" href="{{ recipeRef.recipe.url }}">{{
+          recipeRef.recipe.source
+        }}</a>
       </div>
     </div>
     <button class="pop-button" (click)="showDetails()">Back</button>
@@ -30,7 +30,7 @@
   <!-- ^^^ popup -->
   <div class="main-recipe">
     <p class="title">{{ recipeRef.recipe.label }}</p>
-    <img src="{{ recipeRef.recipe.image }}" alt="" />
+    <img class="recipe-pic" src="{{ recipeRef.recipe.image }}" alt="" />
     <div class="buttons">
       <button class="btn deets" (click)="showDetails()">Details</button>
       <button
