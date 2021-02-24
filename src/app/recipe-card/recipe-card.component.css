@@ -6,7 +6,7 @@
   /* border: black solid 1px; */
   background-color: rgba(255, 255, 255, 0.853);
   position: relative;
-  width: 85vw;
+  width: 300px;
   margin: 10px 0;
   border-radius: 2px;
   /* thought about rounding the container if the image is a circle? */
@@ -163,7 +163,9 @@
   cursor: crosshair;
 }
 
-@media only screen and (max-width: 600px) {
-  .main-recipe {
+@media only screen and (min-width: 768px) {
+  .recipe-card {
+    width: 300px;
+    margin: 10px 10px;
   }
 }
