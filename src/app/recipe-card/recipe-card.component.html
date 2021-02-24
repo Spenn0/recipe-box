@@ -1,22 +1,31 @@
 <li class="recipe-card">
   <div *ngIf="showPopup" class="popup">
     <!-- in wanting to conditionally show an element use *ngIf="" -->
-    <ul>
+    <ul class="ingredient-class">
       <p>Ingredients:</p>
       <li *ngFor="let ingredient of recipeRef?.recipe.ingredients; index as i">
         {{ ingredient.text }}
       </li>
     </ul>
     <div class="info">
-      <p>Servings: {{ recipeRef.recipe.yield }}</p>
-      <p>Cook Time: {{ recipeRef.recipe.totalTime }}</p>
-      <p>Calories: {{ recipeRef.recipe.calories }}</p>
+      <p>
+        <span class="pop-title"> Servings:</span> {{ recipeRef.recipe.yield }}
+      </p>
+      <p>
+        <span class="pop-title">Cook Time:</span>
+        {{ recipeRef.recipe.totalTime }}
+      </p>
+      <p>
+        <span class="pop-title">Calories:</span> {{ recipeRef.recipe.calories }}
+      </p>
       <p>
         Get this Recipe from:
-        <a href="{{ recipeRef.recipe.url }}">{{ recipeRef.recipe.source }}</a>
+        <a class="gross" href="{{ recipeRef.recipe.url }}">{{
+          recipeRef.recipe.source
+        }}</a>
       </p>
     </div>
-    <button (click)="showDetails()">back</button>
+    <button class="pop-button" (click)="showDetails()">Back</button>
   </div>
   <!-- ^^^ popup -->
   <div class="main-recipe">
